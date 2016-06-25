@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2015 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!-- To process this file do                                                                      -->
+<!--                                                                                              -->
+<!-- (1) LaTeX/PDF:                                                                               -->
+<!--     xsltproc mathbook/xsl/mathbook-latex.xsl minimal.xml                                     -->
+<!--     pdflatex minimal.tex                                                                     -->
+<!--     xelatex minimal.tex                                                                      -->
+<!--                                                                                              -->
+<!-- (2) HTML:                                                                                    -->
+<!--     xsltproc mathbook/xsl/mathbook-html.xsl minimal.xml                                      -->
+<!--     <browswer>  minimal.html                                                                 -->
+<!--                                                                                              -->
+<!-- (3) SageMathCloud worksheet (parameter causes a single file for output)                      -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-smc.xsl minimal.xml          -->
+<!--     <SageMathCloud> minimal.sagews                                                           -->
+<!--                                                                                              -->
+<!-- (4) Sage doctesting                                                                          -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl minimal.xml -->
+<!--     <read further instructions in> minimal.py                                                -->
+
+ <mathbook>
+
+    <docinfo>
+        <macros>
+        \newcommand{\doubler}[1]{2#1}
+        </macros>
+    </docinfo>
+
+    <article xml:id="minimal">
+        <title>Mathematics of Weaving</title>
+
+        <frontmatter>
+
+            <titlepage>
+                <author>
+                    <personname>Ken Levasseur</personname>
+                    <institution>UMass Lowell</institution>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+            <abstract>
+                <p>This article highlights some of the mathematics behind weaving.</p>
+            </abstract>
+
+        </frontmatter>
+
+
+<section xml:id="section-introduction">
+<title>Introduction</title>
+
+<p>Weaving that is considered here is what can be realized with a loom such as the one shown in <xref ref="fig-loom"/>.
+The main topics are </p>
+	<ul>
+		<li><p>an exposition of how the weaver's draft, consisting of a tie plan, pedleing matrix and lift plan can
+		 be combined to visualize the final weave that will be produced, and</p></li>
+		<li><p>an analysis of how harnesses can be tied in such a way to realize a given weave pattern.</p></li>
+	</ul>
+<subsection xml:id="ss-weaving-def">
+<title>Weaving Basics</title>
+
+<p>A weave pattern is created by interleaving two sets of parallel lengths of fiber. Each of the fibers in one set, the <term>warp</term>, is connected to exactly one of \(n\) harnesses, \(n>=2\). Each <term>harness</term> will lift the threads that are connected to it.  A series of pedals are connected to the harnesses, with each pedal connected to between 1 and <m>n-1</m> of the harnesses. When a pedal is pressed, the warp fibers connected to that pedal through the harnesses are lifted so that one of the other set of parallel fibers, the <term>weft</term>, can be passed between the warp fibers that are lifted and those that are not lifted. The weft fiber is normally threaded between the warp fibers with a <term>shuttle</term>. </p>
+
+<p>By performing a sequence of pedal presses and shuttle passes that interleave the warp with the weft, a weaving pattern is realized. </p>
+</subsection>
+<subsection xml:id="ss-weaving-draft">
+<title>The Weaver's Draft</title>
+<p>An example of a typical draft, with images</p>
+</subsection>
+<subsection>
+   <title>Computing the weave pattern</title>
+<p>A derivation of the weave based on matrix multiplication.</p>
+</subsection>
+ <subsection>
+   <title>Realization of a Weave</title>
+<p>A description of how to tie harnesses to realize a desired weave pattern.</p>
+</subsection>
+</section>
+<!-- 
+Given a collection of subsets of some set, their minsets are the atoms which cannot be divided by standard set operations. Minsets hold the key to how the harnesses of a loom should be threaded in order to realize a weave pattern, and to determine whether the pattern can even be realized with a specific loom. 
+
+
+We number the warp threads left to right with the numbers 1 to w, and the harnesses with numbers 0 through n-1.
+
+The simplest weave case is a two harness arrangement where warp thread k is connected to harness k mod 2. If each of two pedals are connected to the two harnesses, and pedals are alternated, the result is a "plain weave."  There are two different lift patterns here. 
+
+Figure here. 
+
+
+Fundamental question:  given a weave pattern with a certain set of lift patterns and look with a number available harnesses and pedals, is it possible to realize the pattern with that loom?
+
+
+ -->
+
+
+  <section xml:id="section-interesting">
+		<title>Weaving as a product of matrices</title>
+
+		<p>...</p>
+  </section>
+
+  <section xml:id="section-computation">
+		<title>Minsets and Harness-tying</title>
+
+<p>...<!-- 
+Whether a pattern can be realized is determined by whether each of the distinct horizontal rows of the pattern can be realized. Let r1...rn be those rows. Each row ri is realized be lifting a set Ri of warp fibers. Give two warp fibers f1 and f2, if f1,f2 \in Ri for some i yet f1 \in Rj while f2 \notin Rj, we cannot connect f1 and f2 to the same harness.   If we presume that all warp fibers are connected to exactly one harness, with the set of warp fibers connected to harness i equal to Hi, then the warp fibers lifted to realize a row must be a union of the 
+Hi's. These observations imply that {Hi} would be the minsets generated by {Ri}:
+
+Hi = \intersect{j=1}{n} 
+ -->
+</p> 
+
+		<sage>
+			 <input>
+			 A = matrix(4,5, srange(20))
+			 A.rref()
+			 </input>
+			 <output>
+			 [ 1  0 -1 -2 -3]
+			 [ 0  1  2  3  4]
+			 [ 0  0  0  0  0]
+			 [ 0  0  0  0  0]
+			 </output>
+		</sage>
+  </section>
+
+    </article>
+
+</mathbook>
