@@ -1,0 +1,65 @@
+%% AMS-LaTeX Created with the Wolfram Language : www.wolfram.com
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+\begin{document}
+
+A weaving draft is a block array with the stucture
+
+\(\begin{array}{|c|c|}
+\hline
+ H & P \\
+\hline
+ W & L \\
+\hline
+\end{array}\)
+
+where \(H, T, W \text{and} L\) { }are boolean matrices defined as follows\\
+$\quad $
+
+\textit{ H} is the harness matrix it has as many rows as a loom has harnesses andas many columns as the number of warp threads. { }We define entries
+of this matrix by\\
+$\quad \quad $\(H_{i j \unicode{0008}}= \text{Is} \text{harness} i \text{connected} \text{to} \text{warp} \text{thread} j?\)
+
+\textit{ P} is the pedal matrix it has as many rows as a loom has harnesses and as many columns as the pedals in the loom. { }We define entries of
+this matrix by\\
+$\quad \quad $\(P_{i j \unicode{0008}}= \text{Is} \text{harness} i \text{lifted} \text{by} \text{pedal} j?\)
+
+\textit{ L} is the lift plan matrix it has as many rows as the number of threads in the weft and as many columns as the number of pedals in the loom.
+{ }We define entries of this matrix by\\
+$\quad \quad $\(L_{i j \unicode{0008}}= \text{Is} \text{pedal} j \text{pressed} \text{for} \text{tread} i?\)
+
+\textit{ W }is the matrix of the weave resulting from the setting of \textit{ H}, \textit{ P}, and \textit{ L. { }}We derive \textit{ W} as a matrix
+product in terms of these settings.\\
+$\quad \quad $\(W_{i j}=\text{Is} \text{warp} \text{thead} j \text{lifted} \text{above} \text{weft} \text{thread} i?\)
+
+We claim that \(W = L T^tH\) , where \(T^t\) is the transpose of \textit{ T.}
+
+To demonstrate our claim we define the matrix \textit{ C} where\\
+$\quad $\(C_{i j}= \text{Is} \text{warp} \text{thead} j \text{lifted} \text{when} \text{pedal} i \text{is} \text{pressed}?\\
+\\
+= P_{1i}H_{1j }+P_{2i}H_{2j }+\cdots \\
+\\
+\quad =H^t{}_{j 1}P_{1 i}+H^t{}_{j 2}P_{2 i} +\cdots \\
+\\
+\quad =\left(H^tP\right){}_{j i}\\
+\\
+\quad = \left(H^tP\right)^t{}_{i j}\\
+\\
+\quad = \left(T^tH\right){}_{i j}\)
+
+Now we can compute \textit{ W:\\
+$\quad $}\(W_{i j}= \text{Is} \text{warp} \text{thead} j \text{lifted} \text{above} \text{weft} \text{thread} i?\\
+\\
+= L_{i 1}C_{1j }+ L_{i 2}C_{2j }+\cdots \\
+\\
+= (L C)_{i j}\\
+\\
+= \left(L T^tH\right){}_{i j}\)i
+
+\end{document}
