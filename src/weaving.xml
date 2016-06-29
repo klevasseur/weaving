@@ -62,17 +62,41 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             </titlepage>
 
             <abstract>
-                <p>This article highlights some of the mathematics behind weaving. It is an outgrowth of two projects. The first was work with Shelley Rasmussen and students in the UMass Lowell Co-op Scholar program.  Students Mary Mereseau, Olivia Demers, and Matt D'Angelo</p>
+                <p>This article highlights some of the mathematics behind weaving. It is an outgrowth of two projects. The first was work with Shelley Rasmussen and students in the UMass Lowell Co-op Scholar program.  Students Mary Mersereau, Olivia Demers, and Matt D'Angelo developed materials that linked weaving with mathematics.  The second is <em>Lowell Tex</em>, a collaboration between UMass Lowell faculty and local textile artists to develop STEM-related teaching materials.</p>
             </abstract>
+	<colophon>
+
+		<copyright>
+			<holder>Ken Levasseur</holder>
+			<minilicense>Creative Commons Attribution-Noncommercial-ShareAlike 3.0 United States License. 2011-2016</minilicense>
+			<creativecommons BY="yes" NC="yes" SA="yes" version="4.0"/>
+			<shortlicense><p><em>Mathematics of Weaving</em> by Ken Levasseur is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License. You are free to:
+			<ul>
+			<li>Share<ndash /> copy and redistribute the material in any medium or format</li>
+			<li>Adapt<ndash /> remix, transform, and build upon the material</li>
+			</ul>
+			You may not use the material for commercial purposes.  The licensor cannot revoke these freedoms as long as you follow the license terms.</p>
+			</shortlicense>
+		</copyright>
+
+	</colophon>
 
         </frontmatter>
 
 
 <section xml:id="section-introduction">
 <title>Introduction</title>
+				<figure xml:id="fig-loom">
+                <caption>A loom
+                </caption>
+                <image width="400" source="images/loom.png">
+                    <description>A typical manual harness loom</description>
+                </image>
+            </figure>
 
-<p>Weaving that is considered here is what can be realized with a loom such as the one shown in <xref ref="fig-loom"/>.
+<p>Weaving that is considered here is what can be realized with a multi-harness loom such as the one shown in <xref ref="fig-loom" autoname="yes" />.
 The main topics are </p>
+
 	<ul>
 		<li><p>an exposition of how the weaver's draft, consisting of a tie plan, pedaling matrix and lift plan can
 		 be combined to visualize the final weave that will be produced, and</p></li>
@@ -81,14 +105,14 @@ The main topics are </p>
 <subsection xml:id="ss-weaving-def">
 <title>Weaving Basics</title><index><main>Weaving Basics</main></index>
 
-<p>A weave pattern is created by interleaving two sets of parallel lengths of fiber. Each of the fibers in one set, the <term>warp</term>, is connected to exactly one of \(n\) harnesses, \(n \geq 2\). Each <term>harness</term> will lift the threads that are connected to it.  A series of pedals are connected to the harnesses, with each pedal connected to between 1 and <m>n-1</m> of the harnesses. When a pedal is pressed, the warp fibers connected to that pedal through the harnesses are lifted, forming a <term>shed</term> between the warp fibers that are lifted and those that are not lifted. A <term>weft</term> thread can then be passed through the shed.  The weft runs perpendicular to the warp. Normally, the weft thread is passed through the shed with a <term>shuttle</term>. </p>
+<p>A weave pattern is created by interleaving two sets of parallel lengths of fiber. Each of the fibers in one set, the <term>warp</term>, is connected to exactly one of \(n\) harnesses, \(n \geq 2\). Each <term>harness</term> will lift the threads that are connected to it.  A series of <term>pedals</term> are connected to the harnesses, with each pedal connected to between 1 and <m>n-1</m> of the harnesses. When a pedal is pressed, the warp fibers connected to that pedal through the harnesses are lifted, forming a <term>shed</term> between the warp fibers that are lifted and those that are not lifted. A <term>weft</term> thread can then be passed through the shed.  The weft runs perpendicular to the warp. Normally, the weft thread is passed through the shed with a <term>shuttle</term>. </p>
 
 <p>By performing a sequence of pedal presses and shuttle passes that interleave the warp with the weft, a weaving pattern is realized.  Using different colors for the warp and weft makes the pattern visible. In this discussion we only consider "monochromatic weaving." </p>
 </subsection>
 <subsection xml:id="ss-weaving-draft">
 <title>The Weaver's Draft</title>
-<p>A weaver's draft is typically a array of four matrices, such as the small example in <xref ref="fig-draft" autoname="yes" />. The top left (A) matrix, called the harness matrix, has as many columns as the number of warp threads, and there is a row for each harness.  Each column indicates which harness to which the corresponding thread is tied. Each thread is tied to only one harness and so each column has one mark.  The top right (B) matrix, called the pedal matrix, indicates which harnesses are tied to each pedal and determines which threads will make up the top of the shed when a pedal is pressed.  The bottom right (C) matrix is the lift plan, which indicates the sequence of pedal presses that are to performed for each successive weft thread.  The output from is sequence of presses and shuttle movements is indicated with the bottom left (D) matrix, the weave.  Some weavers use different  positioning schemes in their drafts, but the essential information is the same.  </p>
-<figure xml:id="fig-draft">
+<p>A weaver's draft is typically a array of four matrices, such as the small example in <xref ref="fig-draft" autoname="yes" />. The top left (A) matrix, called the harness matrix, has as many columns as the number of warp threads, and there is a row for each harness.  Each column indicates which harness to which the corresponding thread is tied. Each thread is tied to only one harness and so each column has one mark.  The top right (B) matrix, called the pedal matrix, indicates which harnesses are tied to each pedal and determines which threads will make up the top of the shed when a pedal is pressed. The pedal has as many rows as there are harnesses and as many columns as there are pedals.  The bottom right (C) matrix is the lift plan, which indicates the sequence of pedal presses that are to performed for each successive weft thread. The lift plan has as many columns as there are pedals.  The number of rows is the number of weft threads, although the lift plan is frequently periodic and the rows on the draft would be repeated. The output from is sequence of presses and shuttle movements is indicated with the bottom left (D) matrix, the weave.  Some weavers use different  positioning schemes in their drafts, but the essential information is the same.  </p>
+				<figure xml:id="fig-draft">
                 <caption>A typical monochromatic weaving draft
                 </caption>
                 <image width="400" source="images/fig-draft.png">
@@ -131,12 +155,11 @@ Fundamental question:  given a weave pattern with a certain set of lift patterns
   <section xml:id="section-realization">
 		<title>Realization of a Weave Pattern</title>
 
-<p><index><main>minsets</main></index>...<!-- 
-Whether a pattern can be realized is determined by whether each of the distinct horizontal rows of the pattern can be realized. Let r1...rn be those rows. Each row ri is realized be lifting a set Ri of warp fibers. Give two warp fibers f1 and f2, if f1,f2 \in Ri for some i yet f1 \in Rj while f2 \notin Rj, we cannot connect f1 and f2 to the same harness.   If we presume that all warp fibers are connected to exactly one harness, with the set of warp fibers connected to harness i equal to Hi, then the warp fibers lifted to realize a row must be a union of the 
-Hi's. These observations imply that {Hi} would be the minsets generated by {Ri}:
+<p><index><main>Minsets</main></index> 
+Whether a pattern can be realized is determined by whether each of the distinct horizontal rows of the pattern can be realized. Let <m>r_1,\dots , r_n</m> be those rows. Each row <m>r_i</m> is realized be lifting a set <m>R_i</m> of warp fibers. Give two warp fibers <m>f_1</m> and <m>f_2</m>, if <m>f_1, f_2 \in R_i</m> for some <m>i</m> yet <m>f_1 \in R_j</m> while <m>f_2 \notin R_j</m>, we cannot connect <m>f_1</m> and <m>f_2</m> to the same harness.   If we presume that all warp fibers are connected to exactly one harness, with the set of warp fibers connected to harness <m>i</m> equal to <m>H_i</m>, then the warp fibers lifted to realize a row must be a union of the <m>H_i's</m>. These observations imply that <m>\{H_i\}</m> would be the minsets generated by <m>\{R_j\}</m>.  For each <m>i</m>,
 
-Hi = \intersect{j=1}{n} 
- -->
+<me>H_i = \bigcap_{j=1}^{n}{\tilde{R}_j}</me> 
+where <m>\tilde{R}_j</m> is either <m>R_j</m>  or <m>R_j^c</m>.
 </p> 
 
 <!-- 
