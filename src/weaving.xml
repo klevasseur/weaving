@@ -47,8 +47,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </macros>
     </docinfo>
 
-    <article xml:id="minimal">
-        <title>Mathematics of Weaving</title>
+    <article xml:id="weaving">
+        <title>Some Mathematical Aspects of Weaving</title>
 
         <frontmatter>
 
@@ -61,7 +61,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             </titlepage>
 
             <abstract>
-                <p>This article highlights some of the mathematics behind weaving. It is an outgrowth of two projects. The first was work with Shelley Rasmussen and students in the UMass Lowell Co-op Scholar program.  Students Mary Mersereau, Olivia Demers, and Matt D'Angelo developed materials that linked weaving with mathematics.  The second is <em>Lowell Tex</em>, a collaboration between UMass Lowell faculty and local textile artists to develop STEM-related teaching materials.</p>
+                <p>This article highlights some of the mathematics behind weaving.</p>
             </abstract>
 	<colophon>
 
@@ -83,34 +83,33 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </frontmatter>
 
 
-<section xml:id="section-introduction">
+<introduction>
 <title>Introduction</title>
 				<figure xml:id="fig-loom">
-                <caption>A loom
-                </caption>
+                <caption>A loom</caption>
                 <image width="80%" source="images/loom.png">
                     <description>A typical manual harness loom</description>
                 </image>
             </figure>
 
-<p>Weaving that is considered here is what can be realized with a multi-harness loom such as the one shown in <xref ref="fig-loom" autoname="yes" />.
-The main topics are </p>
-
-	<ul>
+<p>This article highlights some of the mathematics behind weaving. Weaving that is considered here is what can be realized with a multi-harness loom such as the one shown in <xref ref="fig-loom" autoname="yes" />.  The main topics are </p>
+<p>	<ul>
 		<li><p>an exposition of how the weaver's draft, consisting of a tie-up draft, treadlig matrix and lift plan can
 		 be combined to visualize the final weave that will be produced, and</p></li>
 		<li><p>an analysis of how harnesses can be tied in such a way to realize a given weave pattern.</p></li>
-	</ul>
-<subsection xml:id="ss-weaving-def">
+	</ul></p>
+ <p>This is an outgrowth of two projects. The first was work with Shelley Rasmussen and students in the UMass Lowell Co-op Scholar program.  Students Mary Mersereau, Olivia Demers, and Matt D'Angelo developed materials that linked weaving with mathematics.  The second is <em>Lowell Tex</em>, a collaboration between UMass Lowell faculty and local textile artists to develop STEM-related teaching materials.</p>
+</introduction>
+<section xml:id="s-weaving-def">
 <title>Weaving Basics</title><index><main>Weaving Basics</main></index>
 
-<p>A weave pattern is created by interleaving two sets of parallel lengths of fiber. Each of the fibers in one set, the <term>warp</term>, is connected to exactly one of \(n\) harnesses, \(n \geq 2\). Each <term>harness</term> will lift the threads that are connected to it.  A series of <term>treadles</term> are connected to the harnesses, with each treadle connected to between 1 and <m>n-1</m> of the harnesses. When a treadle is pressed, the warp fibers connected to that treadle through the harnesses are lifted, forming a <term>shed</term> between the warp fibers that are lifted and those that are not lifted. A <term>weft</term> thread can then be passed through the shed.  The weft runs perpendicular to the warp. Normally, the weft thread is passed through the shed with a <term>shuttle</term>. </p>
+<introduction><p>A weave pattern is created by interleaving two sets of parallel lengths of fiber. Each of the fibers in one set, the <term>warp</term>, is connected to exactly one of \(n\) harnesses, \(n \geq 2\). Each <term>harness</term> will lift the threads that are connected to it.  A series of <term>treadles</term> are connected to the harnesses, with each treadle connected to between 1 and <m>n-1</m> of the harnesses. When a treadle is pressed, the warp fibers connected to that treadle through the harnesses are lifted, forming a <term>shed</term> between the warp fibers that are lifted and those that are not lifted. A <term>weft</term> thread can then be passed through the shed.  The weft runs perpendicular to the warp. Normally, the weft thread is passed through the shed with a <term>shuttle</term>. </p>
 
-<p>By performing a sequence of pedal presses and shuttle passes that interleave the warp with the weft, a weaving pattern is realized.  Using different colors for the warp and weft makes the pattern visible. In this discussion we only consider "monochromatic weaving," where the warp are all of one color and the weft threads are all of a second color.</p>
-</subsection>
-<subsection xml:id="ss-weaving-draft">
+<p>By performing a sequence of treadle presses and shuttle passes that interleave the warp with the weft, a weaving pattern is realized on fabric.  Using different colors for the warp and weft makes the pattern visible. In this discussion we only consider "monochromatic weaving," where the warp are all of one color and the weft threads are all of a second color.</p>
+</introduction>
+<subsection xml:id="s-weaving-draft">
 <title>The Weaver's Draft</title>
-<p>A weaver's draft is typically a array of four matrices, such as the small example in <xref ref="fig-draft" autoname="yes" />. The top left (A) matrix, called the harness draft, has as many columns as the number of warp threads, and there is a row for each harness.  Each column indicates to which harness the corresponding thread is tied. Each thread is tied to only one harness and so each column has one mark.  The top right (B) matrix, called the pedal plan, indicates which harnesses are tied to each treadle and determines which threads will make up the top of the shed when a pedal is pressed. The pedal has as many rows as there are harnesses and as many columns as there are pedals.  The bottom right (C) matrix is the lift plan, which indicates the sequence of pedal presses that are to performed for each successive weft thread. The lift plan has as many columns as there are pedals.  The number of rows is the number of weft threads, although the lift plan is frequently periodic and the rows on the draft would be repeated. The output from is sequence of presses and shuttle movements is indicated with the bottom left (D) matrix, the weave.  Some weavers use different  positioning schemes in their drafts, but the essential information is the same.  </p>
+<p>A weaver's draft is typically a array of four matrices, such as the small example in <xref ref="fig-draft" autoname="yes" />. The top left (A) matrix, called the harness draft, has as many columns as the number of warp threads, and there is a row for each harness.  Each column indicates to which harness the corresponding thread is tied. Each thread is tied to only one harness and so each column has one mark.  The top right (B) matrix, called the treadling plan, indicates which harnesses are tied to each treadle and determines which threads will make up the top of the shed when a treadle is pressed. The treadling plan has as many rows as there are harnesses and as many columns as there are treadles.  The bottom right (C) matrix is the lift plan, which indicates the sequence of treadle presses that are to be performed, one for each successive weft thread. The lift plan has as many columns as there are treadles.  The number of rows is the number of weft threads.   The lift plan is frequently periodic and the rows on the draft could be repeated. The output from this sequence of presses and shuttle movements is indicated with the bottom left (D) matrix, the weave.  Some weavers use different  positioning schemes in their drafts, but the essential information is the same.  </p>
 				<figure xml:id="fig-draft">
                 <caption>A typical monochromatic weaving draft
                 </caption>
@@ -121,30 +120,29 @@ The main topics are </p>
 </subsection>
 <subsection>
    <title>Computing the weave pattern</title>
-<p>Clearly the weaver has control over the harness matrix, pedal matrix and lift plan.   It is a simple matter of logic to determine whether any weft thread will lie above or below any warp thread.  In <xref ref="section-products" autoname="yes"/> we derive formulas to determine the whole weave based on matrix multiplication.</p>
+<p>Clearly the weaver has control over the harness matrix, treadle matrix and lift plan.   It is a simple matter of logic to determine whether any weft thread will lie above or below any warp thread.  In <xref ref="s-products" autoname="yes"/> we derive formulas to determine the whole weave based on matrix multiplication.</p>
 <p>Not every draft will produce a weave that "hangs together."  A trivial example would be a draft for which one of the warp fibers is always on the upper part of the shed, which would leave that thread to float around.  Less obvious cases can arise though.  We will describe how this can be determined from the output matrix.</p>
 </subsection>
- <subsection>
+<subsection>
    <title>Realization of a Weave</title>
-<p>An even more practical question is how to specify the harness matrix, pedal matrix and lift plan to attain a specific weave pattern, if at all possible for a given loom.  In <xref ref="section-realization" autoname="yes"/>, we give a description of how to determine whether one can  realize a desired weave pattern and how the loom can be set to do so.</p>
+<p>An even more practical question is how to specify the harness matrix, treadle matrix and lift plan to attain a specific weave pattern, if at all possible for a given loom.  In <xref ref="section-realization" autoname="yes"/>, we give a description of how to determine whether one can  realize a desired weave pattern and how the loom can be set to do so.</p>
 </subsection>
-</section>
 <!-- 
 Given a collection of subsets of some set, their minsets are the atoms which cannot be divided by standard set operations. Minsets hold the key to how the harnesses of a loom should be threaded in order to realize a weave pattern, and to determine whether the pattern can even be realized with a specific loom. 
 
 
 We number the warp threads left to right with the numbers 1 to w, and the harnesses with numbers 0 through n-1.
 
-The simplest weave case is a two harness arrangement where warp thread k is connected to harness k mod 2. If each of two pedals are connected to the two harnesses, and pedals are alternated, the result is a "plain weave."  There are two different lift patterns here. 
+The simplest weave case is a two harness arrangement where warp thread k is connected to harness k mod 2. If each of two treadles are connected to the two harnesses, and treadles are alternated, the result is a "plain weave."  There are two different lift patterns here. 
 
 Figure here. 
 
 
-Fundamental question:  given a weave pattern with a certain set of lift patterns and look with a number available harnesses and pedals, is it possible to realize the pattern with that loom?
+Fundamental question:  given a weave pattern with a certain set of lift patterns and look with a number available harnesses and treadle s, is it possible to realize the pattern with that loom?
 
 
  -->
-
+</section>
 <xi:include href="./harnessmatrix.xml" />
 
 <section xml:id="section-realization">
@@ -175,12 +173,7 @@ where <m>\tilde{R}_j</m> is either <m>R_j</m>  or <m>R_j^c</m>.
  <backmatter xml:id="backmatter">
             <title>Reference</title>
 
-            <appendix>
-                <title>Notation</title>
-                <p>This is some notation introduced in the article.</p>
-                <notation-list />
-            </appendix>
-
+ 
 
  
             <!-- Bibliography/References can appear anywhere, -->
@@ -191,6 +184,7 @@ where <m>\tilde{R}_j</m> is either <m>R_j</m>  or <m>R_j^c</m>.
 
                 <biblio type="raw" xml:id="biblio-rasmussen-harness">Shelley Rasmussen, <title>On 3-Harness Weaving: Cataloging Designs Generated by Fundamental Blocks Having Distinct Rows and Columns</title>.<journal>The Electronic Journal of Combinatorics</journal>, 2008, <volume>15</volume> <number>R1</number>, 57<ndash />62.
                 </biblio>
+        </references>
 
 <!-- 
                 <biblio type="raw" xml:id="biblio-lay-article">David C. Lay, <title>Subspaces and Echelon Forms</title>. <journal>The College Mathematics Journal</journal>, January 1993, <volume>24</volume> <number>1</number>.</biblio>
@@ -198,14 +192,13 @@ where <m>\tilde{R}_j</m> is either <m>R_j</m>  or <m>R_j^c</m>.
                 <conclusion>
                     <p>Need a conclusion here?</p>
                 </conclusion>
-   -->
-          </references>
-
+  
             <index-part >
                 <title>Index</title>
                 <index-list />
             </index-part>
-
+  -->
+ 
             <colophon>
                 <p>This article was authored in MathBook XML.</p>
             </colophon>
