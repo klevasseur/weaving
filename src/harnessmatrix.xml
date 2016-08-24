@@ -6,27 +6,27 @@
 
 \(\begin{array}{|c|c|}
 \hline
- H &amp;P \\
+ H &amp;T \\
 \hline
  W &amp;L \\
 \hline
 \end{array}\)
 
-where \(H, T, W \textrm{ and } L\) are boolean matrices defined as follows, where True is represented as 1 and False as 0.  Expressions that derive the main formula in this section use the notation of Boolean arithmetic, were conjunction (<q>and</q>) is denoted by <m>\cdot</m> and disjunction (non-exclusive <q>or</q>) is denoted by <m>+</m>.</p>
+where \(H, T, W \textrm{ and } L\) are boolean matrices defined as follows, where True is represented as 1 and False as 0.  Expressions that derive the main formula in this section use the notation of Boolean arithmetic, were conjunction (<q>and</q>) is denoted by a multiplication sign, <m>\cdot</m>, and disjunction (non-exclusive <q>or</q>) is denoted by an addition sign, <m>+</m>.</p>
 
 <p> <m>H</m>  is the harness draft it has as many rows as a loom has harnesses and as many columns as the number of warp threads. We define entries of this matrix by
 <me>H_{i j }=\textrm{ Is harness } i \textrm{ connected to  warp thread } j?</me>
 </p>
 
-<p><m>P</m>  is the treadle matrix it has as many rows as a loom has harnesses and as many columns as the number of treadles in the loom. We define entries of this matrix by
-<me>P_{i j}= \textrm{Is harness } i \textrm{ lifted by treadle } j?</me>
+<p><m>T</m>  is the treadle matrix it has as many rows as a loom has harnesses and as many columns as the number of treadles in the loom. We define entries of this matrix by
+<me>T_{i j}= \textrm{Is harness } i \textrm{ lifted by treadle } j?</me>
 </p>
 
 <p> <m>L</m>  is the lift plan matrix it has as many rows as the number of threads in the weft and as many columns as the number of treadles in the loom. We define entries of this matrix by
 <me>L_{i j}= \textrm{Is treadle } j \textrm{ pressed for weft tread } i?</me>
 </p>
 
-<p> <m>W</m> is the matrix of the weave resulting  from the setting of  <m>H</m> ,  <m>P</m> , and  <m>L</m> . We derive  <m>W</m>  as a matrix
+<p> <m>W</m> is the matrix of the weave resulting  from the setting of  <m>H</m> ,  <m>T</m> , and  <m>L</m> . We derive  <m>W</m>  as a matrix
 product in terms of these settings.
 <me>W_{i j}= \textrm{Is warp thead } j \textrm{ lifted above weft thread } i?</me></p>
 
@@ -37,29 +37,50 @@ product in terms of these settings.
 <proof>
 <p>To prove our claim we define the matrix  <m>C</m>,  where <me>C_{i j}= \textrm{Is warp thead } j \textrm{ lifted when treadle } i \textrm{ is pressed?}</me></p>
 
-<p>We derive a formula for the <m>C</m>:
+<p>We derive a formula for the <m>C</m>, converting questions to Boolean propositions for compactness:
 <me>
 \begin{split}
-C_{i j} &amp;= \textrm{Is warp thead } j \textrm{ lifted when treadle } i \textrm{ is pressed?}\\
-	  	&amp; = P_{1i}H_{1j }+P_{2i}H_{2j }+\cdots \\
-		&amp; = H^t{}_{j 1}P_{1 i}+H^t{}_{j 2}P_{2 i} +\cdots \\
-		&amp; = \left( H^t P \right)_{j i}\\
-		&amp; = \left( H^t P \right)^t_{i j}\\
+C_{i j} &amp;= \textrm{Warp thead } j \textrm{ is lifted when treadle } i \textrm{ is pressed}\\
+		&amp; = (\textrm{harness }1 \textrm{ is lifted by treadle } i\textrm{ and harness }1\textrm{ is connected to  warp thread} j)\textrm{ or } \\
+		&amp; \quad  (\textrm{harness }2 \textrm{ is lifted by treadle } i\textrm{ and harness }2\textrm{ is connected to  warp thread} j)\textrm{ or } \cdots\\
+		&amp; = T_{1i}H_{1j }+T_{2i}H_{2j }+\cdots \\
+		&amp; = T^{t}_{i1}H_{1j }+T^{t}_{i2}H_{2j }+\cdots \\
 		&amp; = \left(T^tH\right)_{i j}
 \end{split}
 </me>
-</p>
+Therefore, <m>C= T^t H</m></p>
 
 <p>Now we can compute <m>W</m>.
 <me>
 \begin{split}
-W_{i j} &amp;= \textrm{Is warp thead } j \textrm{ lifted above weft thread } i?\\
+W_{i j} &amp;= \textrm{Warp thead } j \textrm{ is lifted above weft thread } i\\
 		&amp;= L_{i 1}C_{1j }+ L_{i 2}C_{2j }+\cdots \\
 		&amp; = (L C)_{i j}\\
-		&amp;= \left(L T^tH\right){}_{i j}
+		&amp;= \left(L T^t H\right){}_{i j}
 \end{split}
 </me>
 </p>
 </proof>
-</claim> 
+</claim>
+<p>We can verify the weaving draft in <xref ref="fig-draft" autoname="yes"/>.</p>
+<sage>
+<input>
+H=matrix(ZZ,[[1,0,0,0,1,0,0,0],[0,1,0,0,0,1,0,0],
+		[0,0,1,0,0,0,1,0],[0,0,0,1,0,0,0,1]])
+T=matrix(ZZ,[[0,0,1,1],[0,1,1,0],[1,1,0,0],[1,0,0,1]])
+L=matrix(ZZ,[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1],
+		[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
+L*(T.transpose())*H
+</input>
+<output>
+[0 0 1 1 0 0 1 1]
+[0 1 1 0 0 1 1 0]
+[1 1 0 0 1 1 0 0]
+[1 0 0 1 1 0 0 1]
+[0 0 1 1 0 0 1 1]
+[0 1 1 0 0 1 1 0]
+[1 1 0 0 1 1 0 0]
+[1 0 0 1 1 0 0 1]
+</output>
+</sage>
 </section>
