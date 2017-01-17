@@ -127,21 +127,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
    <title>Realization of a Weave</title>
 <p>An even more practical question is how to specify the harness matrix, treadle matrix and lift plan to attain a specific weave pattern, if at all possible for a given loom.  In <xref ref="section-realization" autoname="yes"/>, we give a description of how to determine whether one can  realize a desired weave pattern and how the loom can be set to do so.</p>
 </subsection>
-<!-- 
-Given a collection of subsets of some set, their minsets are the atoms which cannot be divided by standard set operations. Minsets hold the key to how the harnesses of a loom should be threaded in order to realize a weave pattern, and to determine whether the pattern can even be realized with a specific loom. 
-
-
-We number the warp threads left to right with the numbers 1 to w, and the harnesses with numbers 0 through n-1.
-
-The simplest weave case is a two harness arrangement where warp thread k is connected to harness k mod 2. If each of two treadles are connected to the two harnesses, and treadles are alternated, the result is a "plain weave."  There are two different lift patterns here. 
-
-Figure here. 
-
-
-Fundamental question:  given a weave pattern with a certain set of lift patterns and look with a number available harnesses and treadle s, is it possible to realize the pattern with that loom?
-
-
- -->
 </section>
 <xi:include href="./harnessmatrix.xml" />
 <xi:include href="./reverseweave.xml" />
