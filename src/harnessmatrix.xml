@@ -4,13 +4,13 @@
 <p>Recall that a weaving draft is a block array with the stucture
 
 
-\(\begin{array}{|c|c|}
+<me>\begin{array}{|c|c|}
 \hline
  H &amp;T \\
 \hline
  W &amp;L \\
 \hline
-\end{array}\)
+	\end{array}</me>
 
 where \(H, T, W \textrm{ and } L\) are boolean matrices defined as follows, where True is represented as 1 and False as 0.  Expressions that derive the main formula in this section use the notation of Boolean arithmetic, were conjunction (<q>and</q>) is denoted by a multiplication sign, <m>\cdot</m>, and disjunction (non-exclusive <q>or</q>) is denoted by an addition sign, <m>+</m>.</p>
 
